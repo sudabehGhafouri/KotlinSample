@@ -7,9 +7,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class CallServices(context:Context) {
+class CallServices(context: Context) {
 
-    var apiService =  ApiClient.getClient(context) !!.create(ApiInterface::class.java)
+    var apiService = ApiClient.getClient(context)!!.create(ApiInterface::class.java)
 
     fun searchRepos(
 
@@ -47,5 +47,6 @@ class CallServices(context:Context) {
 
     }
 }
+
 private const val IN_QUALIFIER = "in:name,description"
 

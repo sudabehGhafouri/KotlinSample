@@ -20,24 +20,6 @@ class ApiClient {
 
         private const val BASE_URL = "https://api.github.com/"
 
-        fun create(): ApiClient {
-            val logger = HttpLoggingInterceptor()
-            logger.level = HttpLoggingInterceptor.Level.BASIC
-
-            val client = OkHttpClient.Builder()
-                .addInterceptor(logger)
-                .build()
-
-            return Retrofit.Builder()
-                .client(client)
-                .baseUrl(BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(ApiClient::class.java)
-
-        }
-
-
         fun getClient(context: Context): Retrofit? {
             if (okHttpClient == null) initOkHttp(context)
             if (retrofit == null) {

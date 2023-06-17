@@ -16,11 +16,6 @@ class BindingAdapter {
             this.visibility = if (showing) View.VISIBLE else View.INVISIBLE
         }
 
-        @JvmStatic
-        @BindingAdapter("loadImage")
-        fun AppCompatImageView.setImageUrl(url: String) {
-            //TODO load image by library
-        }
 
         @JvmStatic
         @BindingAdapter("rvAdapter")

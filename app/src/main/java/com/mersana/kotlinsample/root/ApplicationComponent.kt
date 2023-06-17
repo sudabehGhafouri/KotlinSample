@@ -3,6 +3,7 @@ package com.mersana.kotlinsample.root
 import com.mersana.kotlinsample.database.DataBaseModule
 import com.mersana.kotlinsample.viewModel.MainViewModel
 import dagger.Component
+
 @Component(
     modules = arrayOf(
         ApplicationModule::class,
@@ -10,9 +11,9 @@ import dagger.Component
     ),
 )
 
-        interface ApplicationComponent  {
+interface ApplicationComponent {
 
-    // inject callService to mainViewModel
-        fun inject(target : MainViewModel)
+    // inject callService and searchAccess to mainViewModel
+    fun inject(target: MainViewModel)
 
 }

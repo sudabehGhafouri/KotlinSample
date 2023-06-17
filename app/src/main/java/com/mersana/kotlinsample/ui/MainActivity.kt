@@ -1,6 +1,6 @@
 package com.mersana.kotlinsample.ui
 
-import androidx.appcompat.app.AppCompatActivity
+
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider

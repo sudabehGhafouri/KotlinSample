@@ -1,4 +1,4 @@
-package com.mersana.kotlinsample.database.repository
+package com.mersana.kotlinsample.database.accessDatabase
 
 import androidx.lifecycle.LiveData
 import com.mersana.kotlinsample.database.DataBase
@@ -10,15 +10,15 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 
-class SearchRepository (
+class SearchAccess (
     private val database: DataBase,
 
     ) {
 
-        fun insertRepo(repos: List<SearchModel>) {
+        fun insertSearch(repos: List<SearchModel>) {
 
 
-                Completable.fromAction { database.searchDao().insertRepos(repos) }
+                Completable.fromAction { database.searchDao().insertSearch(repos) }
                     .subscribeOn(
                         Schedulers.io()
                     )
@@ -35,5 +35,5 @@ class SearchRepository (
 
 
 
-        fun loadRepos(): LiveData<List<SearchModel>> = database.searchDao().loadRepos()
+        fun getSearch(): LiveData<List<SearchModel>> = database.searchDao().getSearch()
     }

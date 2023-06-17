@@ -7,77 +7,73 @@
             type="com.mersana.kotlinsample.model.SearchModel"/>
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_marginBottom="4dp"
-        android:layout_width="match_parent"
-        android:layout_height="100dp">
 
-        <com.mersana.kotlinsample.customeWidget.TextViewCustom
-            android:id="@+id/tvName"
-            android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:paddingTop="10dp">
+
+        <com.mersana.kotlinsample.utils.customeWidget.TextViewCustom
+            android:id="@+id/textView_Name_DataRecyclerView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_text"
             android:layout_marginTop="8dp"
             android:text="@{item.name}"
+            app:layout_constraintEnd_toStartOf="@+id/textview_Fork_DataRecyclerView"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@tools:sample/first_names" />
 
-        <com.mersana.kotlinsample.customeWidget.TextViewCustom
-            android:id="@+id/tvFullName"
-            android:layout_width="wrap_content"
+        <com.mersana.kotlinsample.utils.customeWidget.TextViewCustom
+            android:id="@+id/textView_FullName_DataRecyclerView"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_text"
             android:layout_marginTop="4dp"
             android:text="@{item.full_name}"
-            app:layout_constraintEnd_toStartOf="@+id/tvstar"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintEnd_toStartOf="@+id/textview_Star_DataRecyclerView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvName"
+            app:layout_constraintTop_toBottomOf="@+id/textView_Name_DataRecyclerView"
             tools:text="@tools:sample/full_names" />
 
-        <com.mersana.kotlinsample.customeWidget.TextViewCustom
-            android:id="@+id/tvFork"
+        <com.mersana.kotlinsample.utils.customeWidget.TextViewCustom
+            android:id="@+id/textview_Fork_DataRecyclerView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_text"
             android:text="@{String.valueOf(item.forks_count)}"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/tvName"
-            app:layout_constraintTop_toTopOf="@id/tvName"
-            tools:text="123123" />
+            app:layout_constraintTop_toTopOf="@+id/textView_Name_DataRecyclerView"
+            tools:text="@string/sample_number" />
 
-        <com.mersana.kotlinsample.customeWidget.TextViewCustom
-            android:id="@+id/tvstar"
+        <com.mersana.kotlinsample.utils.customeWidget.TextViewCustom
+            android:id="@+id/textview_Star_DataRecyclerView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="@dimen/padding_text"
             android:text="@{String.valueOf(item.forks_count)}"
-            tools:text="123213"
+            tools:text="@string/sample_number"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/tvFullName"
+            app:layout_constraintTop_toTopOf="@+id/textView_FullName_DataRecyclerView"
             />
 
 
-        <com.mersana.kotlinsample.customeWidget.TextViewCustom
-            android:id="@+id/textview_description_dataRV"
-            android:layout_width="wrap_content"
+        <com.mersana.kotlinsample.utils.customeWidget.TextViewCustom
+            android:id="@+id/textview_description_DataRecyclerView"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/padding_text"
             android:text="@{item.description}"
             tools:text="@tools:sample/full_names"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvFullName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView_FullName_DataRecyclerView"
             />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="2dp"
-
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textview_description_dataRV" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

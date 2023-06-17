@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">KotlinSample</string>
+    <string name="sample_number">12345</string>
 </resources>

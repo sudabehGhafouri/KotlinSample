@@ -1,4 +1,4 @@
-package com.mersana.kotlinsample.customeWidget
+package com.mersana.kotlinsample.utils.customeWidget
 
 import android.content.Context
 import android.util.AttributeSet

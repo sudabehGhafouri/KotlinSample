@@ -1,4 +1,4 @@
-package com.mersana.kotlinsample.tools
+package com.mersana.kotlinsample.utils
 
 import android.util.Log
 import androidx.annotation.MainThread

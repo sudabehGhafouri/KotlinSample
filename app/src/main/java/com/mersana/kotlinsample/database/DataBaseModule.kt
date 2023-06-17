@@ -1,7 +1,7 @@
 package com.mersana.kotlinsample.database
 
 import android.content.Context
-import com.mersana.kotlinsample.database.repository.SearchRepository
+import com.mersana.kotlinsample.database.accessDatabase.SearchAccess
 
 import dagger.Module
 import dagger.Provides
@@ -17,7 +17,7 @@ class DataBaseModule (val applicationContext: Context){
     }
 
     @Provides
-    fun provideSearchRepository() : SearchRepository{
-        return SearchRepository(provideRepoDataBase())
+    fun provideSearchRepository() : SearchAccess{
+        return SearchAccess(provideRepoDataBase())
     }
 }

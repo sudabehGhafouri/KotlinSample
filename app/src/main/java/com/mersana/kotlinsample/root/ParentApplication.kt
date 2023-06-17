@@ -1,6 +1,6 @@
 package com.mersana.kotlinsample.root
 
-import android.app.Application
+
 import android.content.Context
 import androidx.multidex.MultiDex
 import androidx.multidex.MultiDexApplication
@@ -12,16 +12,14 @@ class ParentApplication : MultiDexApplication() {
         super.attachBaseContext(base)
         MultiDex.install(this)
     }
-    companion object{
+
+    companion object {
         lateinit var instance: ParentApplication
     }
 
-    fun getInstance(): ParentApplication {
-        return instance
-    }
 
-    private lateinit  var component: ApplicationComponent
-//    private var instance: ParentApp
+    private lateinit var component: ApplicationComponent
+
 
     override fun onCreate() {
         super.onCreate()
@@ -30,8 +28,6 @@ class ParentApplication : MultiDexApplication() {
         component = DaggerApplicationComponent.builder()
             .applicationModule(ApplicationModule(applicationContext))
             .dataBaseModule(DataBaseModule(applicationContext))
-
-
 
             .build()
     }

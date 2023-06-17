@@ -8,13 +8,10 @@ import dagger.Provides
 import javax.inject.Singleton
 
 @Module
-class ApplicationModule (val applicationContext: Context){
+class ApplicationModule(val applicationContext: Context) {
 
     private var application: Application? = null
 
-    fun ApplicationModule(application: Application?) {
-        this.application = application
-    }
 
     @Provides
     @Singleton
@@ -24,7 +21,7 @@ class ApplicationModule (val applicationContext: Context){
 
     @Provides
     open fun providerCallService(): CallServices {
-        return  CallServices(applicationContext)
+        return CallServices(applicationContext)
 
     }
 }

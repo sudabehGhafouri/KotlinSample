@@ -8,8 +8,10 @@ import retrofit2.http.Query
 interface ApiInterface {
 
     @GET("search/repositories?sort=stargazers_count")
-    fun searchRepos(@Query("q") query : String,
-                    @Query("page") page : Int,
-                    @Query("per_page") ItemsPerPage : Int) :
+    fun searchRepos(
+        @Query("q") query: String,
+        @Query("page") page: Int,
+        @Query("per_page") ItemsPerPage: Int
+    ):
             Call<SearchResponseModel>
 }

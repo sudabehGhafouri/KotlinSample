@@ -7,24 +7,21 @@ import com.mersana.kotlinsample.model.SearchModel
 @Dao
 interface SearchDao {
 
-    @Query("select * from SearchModel ORDER BY id DESC limit 1")
-    fun lastRepo() : LiveData<SearchModel>
-
 
     @Query("select * from SearchModel")
-    fun loadRepos() : LiveData<List<SearchModel>>
+    fun getSearch() : LiveData<List<SearchModel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertRepos(repos : List<SearchModel>)
+    fun insertSearch(repos : List<SearchModel>)
 
     @Update
-    fun updateRepo(repo : SearchModel)
+    fun updateSearch(repo : SearchModel)
 
     @Query("delete from SearchModel")
-    fun deleteRepos()
+    fun deleteSearch()
 
     @Delete
-    fun deleteRepo(repo : SearchModel)
+    fun deleteSearch(repo : SearchModel)
 
 
 }
